@@ -5,12 +5,7 @@ from app.main import app
 client = TestClient(app)
 
 
-def test_read_root():
-    response = client.get("/")
-    assert response.status_code == 200
-
-
-def test_get_hello():
-    response = client.get("/hello")
+def test_get_hello_world():
+    response = client.get("/hello_world")
     assert response.status_code == 200
     assert response.json() == {"message": "Hello, World!"}
