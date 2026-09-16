@@ -1,9 +1,10 @@
+import pytest
 from fastapi.testclient import TestClient
 from app.main import app
 
 client = TestClient(app)
 
-def test_hello_hi():
-    response = client.get("/hello_hi")
+def test_hello_world_i_am_mk():
+    response = client.get("/hello_world_i_am_mk")
     assert response.status_code == 200
-    assert response.json() == {"message": "Hello, Hi!"}
+    assert response.json() == {"message": "Hello, world! I am MK."}
